@@ -24,12 +24,6 @@ $("#sidebar-content").hide();
 $("#menu_burger").delay(50).fadeIn();
 }
 
-
-
-$("#exit").click(function(){
-$.fn.closemenu();
-});
-
 $("#sidebar h3 a").click(function () {
    $( this ).toggleClass( "highlight" );
    $("#sidebar h3 a").not(this).removeClass("highlight")
@@ -41,10 +35,19 @@ $("#sidebar h3 a").click(function () {
 $.fn.openmenumobile = function() {
 $("#menu_burger").hide();
 $("#sidebar").animate({
-  "width": "20em"
+  "width": "80%"
 });
 openmenu = 1;
 $("#sidebar-content").fadeIn();
+}
+
+$.fn.closemenumobile = function() {
+$("#sidebar").animate({
+  "width": "3em"
+}, 400);
+openmenu = 0;
+$("#sidebar-content").hide();
+$("#menu_burger").delay(50).fadeIn();
 }
 
 function sidebarmobile(x) {
@@ -52,10 +55,16 @@ function sidebarmobile(x) {
     $("#menu_burger").click(function(){
       $.fn.openmenumobile();
     });
+    $("#exit").click(function(){
+      $.fn.closemenumobile();
+    });
   } else {
     $("#menu_burger").click(function(){
       $.fn.openmenu();
+    $("#exit").click(function(){
+      $.fn.closemenu();
     });
+  });
   }
 }
 
@@ -202,44 +211,6 @@ $( "#pr_arrowsx4" ).click(function() {
 });
 
 
-/* PAGINA PROGETTI MOBILE */
-
-function projectsmobile(x) {
-  if (x.matches) { // If media query matches
-    $("#roots").click(function(){
-      $("#projects-bar").hide();
-      $(".virtual-tour-projects").hide();
-      $("#content").show();
-      $(".roots_slide2").show();
-      $(".roots_slide3").show();
-      $(".roots_slide4").show();
-
-      $("#goprlist").show();
-    });
-  } else {
-    $("#projects-bar").show();
-    $(".virtual-tour-projects").show();
-    $(".roots_slide2").hide();
-    $(".roots_slide3").hide();
-    $(".roots_slide4").hide();
-
-    $("#goprlist").hide();
-    $("#menu_burger").show();
-  }
-}
-
-$("#goprlist").click(function(){
-  $("#projects-bar").show();
-  $("#menu_burger").show();
-  $("#goprlist").hide();
-  $("#content").hide();
-});
-
-
-var x = window.matchMedia("(max-width: 768px)")
-projectsmobile(x) // Call listener function at run time
-x.addListener(projectsmobile) // Attach listener function on state changes
-
 
 /* HIGHLIGHT PROGETTI */
 
@@ -254,9 +225,26 @@ $(".projects-title-list a").click(function () {
 
 $("#content").hide();
 
-$("#roots").click(function(){
+$(".roots").click(function(){
   $("#content").show();
+  if (x.matches) {
+  $(".virtual-tour-projects").hide();
+  $(".roots_slide2").show();
+  $(".roots_slide3").show();
+  $(".roots_slide4").show();
+  $.fn.closemenumobile();
+} else {
+  $.fn.closemenu();
+  $(".virtual-tour-projects").show();
+  $(".roots_slide2").hide();
+  $(".roots_slide3").hide();
+  $(".roots_slide4").hide();
+  }
 });
+
+
+
+
 
 
 });

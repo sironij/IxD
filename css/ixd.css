@@ -67,6 +67,19 @@ ul{
   list-style-type: none;
 }
 
+@media screen and (max-width: 768px) {
+
+  h2{
+    margin-top: 0;
+    font-size: 1.5em;
+  }
+  h3{
+    margin-top: 0;
+    font-size: 1.5em;
+  }
+
+}
+
 
 /*VIRTUAL TOUR*/
 
@@ -83,6 +96,12 @@ body {
   height:100vh;
   width:100vw;
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  #vt-window{
+    margin-left: 3em;
+  }
 }
 
 
@@ -203,9 +222,31 @@ body {
 
 @media screen and (max-width: 768px) {
 
+  #menu_burger img{
+    margin-left: 0.45em;
+  }
+
+  #gohome img{
+    margin-bottom: 1em;
+  }
+
+  #exit img{
+    margin-bottom: 1em;
+  }
+
+  #sidebar {
+    position: fixed;
+    width: 3em;
+  }
+
+  #menu_burger {
+    position: fixed;
+  }
+
   #sidebar h3 {
     font-size: 2em;
-    margin-left: 2em;
+    margin-left: 1em;
+    margin-top: 1em;
   }
 
   #menu img{
@@ -224,18 +265,10 @@ body {
   }
 
   #insta img{
-    margin-left: 4em;
+    margin-left: 2em;
     margin-top: 2em;
     width:3em;
     height:3em;
-  }
-
-  .virtual-tour {
-    margin-top: 1.5em;
-  }
-
-  .virtual-tour a{
-    font-size: 1.5em;
   }
 
   #sidebar h3 a{
@@ -355,7 +388,7 @@ body {
   }
 
   .block {
-    width: 4.5em;
+    left: 51%;
   }
 
   .text-splash{
@@ -414,7 +447,7 @@ body {
 @media screen and (max-width: 768px) {
 
 #intro{
-  padding: 1em 1em 3em 5em;
+  padding: 1em 1em 3em 3em;
 }
 
 }
@@ -443,7 +476,7 @@ body {
 }
 
 .projects-title-list{
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 .projects-title-list a{
@@ -472,29 +505,43 @@ a:focus{
   background-color: white;
 }
 
+#projects-bar-mobile{
+  display: none;
+}
 
 /* PROJECT LIST MOBILE */
 
 @media screen and (max-width: 768px) {
 
   #projects-bar{
+    display: none;
+  }
+
+  #projects-bar-mobile{
+    display:block;
     position: relative;
-    width: 100%;
-    margin-left: 5em;
+    margin-left: 2em;
     background-color: white;
+    overflow: hidden;
+    width: 80%;
   }
 
 
-  .projects-title-list a{
-    position:static;
-    height:150vh;
+  .projects-title-list-mobile a{
     text-transform: uppercase;
-    font-size: 3em;
+    font-size: 2em;
     color: black;
+    font-family: "Cairo";
   }
 
-  #projects-title{
+
+
+  #sidebar-content{
     position: relative;
+  }
+
+  #sidebar-content h3 a{
+    color: #7869F6;
   }
 
 }
@@ -660,44 +707,38 @@ a:focus{
 
 @media screen and (max-width: 768px) {
 
+  #content{
+    display: none;
+  }
 
   .overview{
     padding-top: 7em;
-    padding-left: 5em;
+    padding-left: 3em;
   }
 
   .content-title {
-    padding-left: 5em;
+    padding-left: 3em;
   }
 
   #content-section1{
-    padding-left: 5em;
+    padding-left: 3em;
   }
 
   #content-section2{
-    padding-left: 5em;
+    padding-left: 3em;
   }
 
   #content-slide{
-    padding-left: 5em;
+    padding-left: 3em;
   }
 
   .tech {
-    padding-left: 5em;
-  }
-
-  .pr_arrowdx{
-    margin-top: 2em;
-  }
-
-  .pr_arrowsx{
-    margin-top: 2em;
+    padding-left: 3em;
   }
 
   .feature_mockup img{
-    max-width: 20em;
-    max-height: 20em;
-    padding-left: 9em;
+    max-width: 80%;
+    padding-left: 2em;
   }
 
   .pr_arrowsx{
@@ -755,7 +796,7 @@ a:focus{
   }
 
   #footer{
-    padding: 2em 1.5em 1em 6em;
+    padding: 2em 1.5em 1em 3em;
   }
 
   #footer img{
@@ -817,4 +858,9 @@ width: 100%;
 @keyframes design_list_slide {
   from {transform:translate(0em,0em);}
   to {transform:translate(-1000vh,0em);;}
+}
+
+@media screen and (max-width: 768px) {
+  #labixd-section1{
+    padding-left: 3em;
 }
